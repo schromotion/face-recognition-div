@@ -1,11 +1,13 @@
 from PIL import Image, ImageDraw
 import face_recognition
+# Image Landmark Source https://github.com/schromotion/face_recognition/blob/master/face_recognition/api.py
+# Face landmarks definition https://cdn-images-1.medium.com/max/1600/1*AbEg31EgkbXSQehuNJBlWg.png
 
 # Load the jpg file into a numpy array
 image = face_recognition.load_image_file("biden.jpg")
 
 # Find all facial features in all the faces in the image
-face _landmarks_list = face_recognition.face_landmarks(image)
+face_landmarks_list = face_recognition.face_landmarks(image)
 
 #Is this line necessary
 #for face_landmarks in face_landmarks_list:
