@@ -19,5 +19,5 @@ for face_landmarks in face_landmarks_list:
     # Make width 75% of distance between lip and nose.
     # Move line up 50% of the width in pixel diraction
     d.line(face_landmarks['top_lip'], fill=(150, 0, 0, 64), width=8)
-
+    print(face_landmarks['top_lip'])
     pil_image.show()
