@@ -20,12 +20,14 @@ print(topLip)
 print(topLip[0])
 print(topLip[0][0])
 
-for point in topLip:
-    list(point)
+topLipList = [list(elm) for elm in topLip]
+
+for point in topLipList:
     point[1] = point[1]+50
-    tuple(point)
+
+topLip1 = [tuple(elm) for elm in topLipList]
 
 #print(topLip)
-d.line(topLip, fill=(150, 0, 0, 64), width=8)
+d.line(topLip1, fill=(150, 0, 0, 64), width=8)
 
 pil_image.show()
