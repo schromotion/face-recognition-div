@@ -9,15 +9,23 @@ image = face_recognition.load_image_file("biden.jpg")
 # Find all facial features in all the faces in the image
 face_landmarks_list = face_recognition.face_landmarks(image)
 
-for face_landmarks in face_landmarks_list:
-    #Is this line necessary
-    #for face_landmarks in face_landmarks_list:
-    pil_image = Image.fromarray(image)
-    d = ImageDraw.Draw(pil_image, 'RGBA')
+pil_image = Image.fromarray(image)
+d = ImageDraw.Draw(pil_image, 'RGBA')
 
     # Change color
     # Make width 75% of distance between lip and nose.
     # Move line up 50% of the width in pixel diraction
-    d.line(face_landmarks['top_lip'], fill=(150, 0, 0, 64), width=8)
-    print(face_landmarks['top_lip'])
-    pil_image.show()
+topLip = face_landmarks_list[0]['top_lip']
+print(topLip)
+print(topLip[0])
+print(topLip[0][0])
+
+for point in topLip:
+    list(point)
+    point[1] = point[1]+50
+    tuple(point)
+
+#print(topLip)
+d.line(topLip, fill=(150, 0, 0, 64), width=8)
+
+pil_image.show()
