@@ -16,9 +16,6 @@ d = ImageDraw.Draw(pil_image, 'RGBA')
     # Make width 75% of distance between lip and nose.
     # Move line up 50% of the width in pixel diraction
 topLip = face_landmarks_list[0]['top_lip']
-print(topLip)
-print(topLip[0])
-print(topLip[0][0])
 
 topLipList = [list(elm) for elm in topLip]
 
