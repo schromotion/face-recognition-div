@@ -49,6 +49,6 @@ widthVal = math.sqrt((((topLipWidth[1][0])-(topLipWidth[0][0]))**(2))+(((topLipW
 #print(topLip)
 #d.line(topLipWidth1, fill=(150,150,150,150), width=3)
 #d.line(topLipHeight1, fill=(150,150,150,150), width=3)
-d.line(topLip1, fill=(255,255,255,255), width=int(round(widthVal/10)))
+d.line(topLipWidth1, fill=(255,255,255,255), width=int(round(widthVal/10)))
 
 pil_image.show()
