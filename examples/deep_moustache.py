@@ -19,12 +19,23 @@ topLip = face_landmarks_list[0]['top_lip']
 
 topLipList = [list(elm) for elm in topLip]
 
-for point in topLipList:
-    point[1] = point[1]+50
+print(topLipList)
 
+topLipWidth = list()
+topLipWidth.append(topLipList[0])
+topLipWidth.append(topLipList[6])
+print(topLipWidth)
+
+#for point in topLipList:
+#    point[1] = point[1]-50
+
+topLipWidth1 = [tuple(elm) for elm in topLipWidth]
 topLip1 = [tuple(elm) for elm in topLipList]
+print(topLipWidth1)
+print(topLip1)
 
 #print(topLip)
-d.line(topLip1, fill=(150, 0, 0, 64), width=8)
+d.line(topLipWidth1, fill=(150,0,0,150), width=8)
+#d.line(topLip1, fill=(150, 0, 0, 64), width=8)
 
 pil_image.show()
