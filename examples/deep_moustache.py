@@ -50,6 +50,8 @@ lipSlope = ((topLipWidth[1][1])-(topLipWidth[0][1]))/((topLipWidth[1][0])-(topLi
 recipLipSlope = (-1)*(1/lipSlope)
 
 stacheWidth = topLipWidth
+
+##ISSUE HOW TO USE SLOPE AND DISTANCE TO MOVE LINE??
 stacheWidth = stacheWidth * int(round(noseLipDistVal * recipLipSlope))
 
 topLipWidth1 = [tuple(elm) for elm in topLipWidth]
@@ -60,6 +62,6 @@ stacheWidth1 = [tuple(elm) for elm in stacheWidth]
 #print(topLip)
 #d.line(topLipWidth1, fill=(150,150,150,150), width=3)
 #d.line(topLipHeight1, fill=(150,150,150,150), width=3)
-d.line(stacheWidth1, fill=(255,255,255,255), width=8)
+d.line(topLipWidth1, fill=(255,255,255,255), width=8)
 
 pil_image.show()
