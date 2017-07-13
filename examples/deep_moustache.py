@@ -29,9 +29,6 @@ noseTipList = [list(elm) for elm in noseTip]
 topLipWidth = list()
 topLipWidth.append(topLipList[0])
 topLipWidth.append(topLipList[6])
-print(topLipWidth)
-print(topLipWidth[0][0])
-print(topLipWidth[1][0])
 
 #Make Line between nose tip and middle of lip
 noseLipDist = list()
@@ -50,18 +47,21 @@ lipSlope = ((topLipWidth[1][1])-(topLipWidth[0][1]))/((topLipWidth[1][0])-(topLi
 recipLipSlope = (-1)*(1/lipSlope)
 
 stacheWidth = topLipWidth
-
-##ISSUE HOW TO USE SLOPE AND DISTANCE TO MOVE LINE??
-stacheWidth = stacheWidth * int(round(noseLipDistVal * recipLipSlope))
+stacheWidth[0][1] = stacheWidth[0][1] - int(round((noseLipDistVal/2)))
+stacheWidth[1][1] = stacheWidth[1][1] - int(round((noseLipDistVal/2)))
+print(stacheWidth)
 
 topLipWidth1 = [tuple(elm) for elm in topLipWidth]
 topLipHeight1 = [tuple(elm) for elm in topLipHeight]
 topLip1 = [tuple(elm) for elm in topLipList]
 stacheWidth1 = [tuple(elm) for elm in stacheWidth]
+noseLipDist1 = [tuple(elm) for elm in noseLipDist]
 
 #print(topLip)
 #d.line(topLipWidth1, fill=(150,150,150,150), width=3)
 #d.line(topLipHeight1, fill=(150,150,150,150), width=3)
-d.line(topLipWidth1, fill=(255,255,255,255), width=8)
+d.line(topLipWidth1, fill=(255,255,255,255), width=int(round((noseLipDistVal/4))))
+d.line(noseLipDist1, fill=(255,255,255,255), width=int(round((noseLipDistVal/4))))
+
 
 pil_image.show()
